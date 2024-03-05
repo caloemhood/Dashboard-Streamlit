@@ -15,8 +15,6 @@ selected = st.sidebar.radio('Select Option', ['Analisis Tren Penjualan', 'Pengar
 # Menampilkan konten sesuai pilihan di sidebar
 if selected == 'Analisis Tren Penjualan':
   # Analisis Tren Penjualan Waktu ke Waktu
-# Convert 'order_purchase_timestamp' column to datetime format
-merged_df['order_purchase_timestamp'] = pd.to_datetime(merged df['order_purchase_timestamp'])
 # Calculate monthly sales
 monthly_sales = merged_df.groupby(pd.to_datetime(merged_df['order_purchase_timestamp']).dt.to_period('M')).size()
 
