@@ -24,13 +24,11 @@ if selected == 'Analisis Tren Penjualan':
 
 # Add title and labels
     st.title('Tren Penjualan Keseluruhan dari Waktu ke Waktu')
-    st.xlabel(None)
     st.ylabel('Total Penjualan')
 
 # Create scatter plot using Streamlit
 st.scatter_chart(merged_df[['review_score', 'sales']])
 
 # Add labels and title
-st.xlabel(None)
 st.ylabel('Jumlah Penjualan')
 st.title('Hubungan antara Rating Produk dan Jumlah Penjualan')
