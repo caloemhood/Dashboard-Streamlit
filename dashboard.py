@@ -16,7 +16,7 @@ selected = st.sidebar.radio('Select Option', ['Analisis Tren Penjualan', 'Pengar
 if selected == 'Analisis Tren Penjualan':
   # Analisis Tren Penjualan Waktu ke Waktu
 # Calculate monthly sales
-    monthly_sales = merged_df.groupby(pd.to_datetime(merged_df['sales x']).dt.to_period('M')).size()
+    monthly_sales = merged_df.groupby(pd.to_datetime(merged_df['sales_x']).dt.to_period('M')).size()
 
 # Plot monthly sales using Streamlit
     st.line_chart(monthly_sales)
