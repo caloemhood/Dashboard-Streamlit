@@ -28,7 +28,7 @@ if selected == 'Analisis Tren Penjualan':
     st.ylabel('Total Penjualan')
 
 # Create scatter plot using Streamlit
-st.scatter_chart(product_sales_rating[['review_score', 'sales']])
+st.scatter_chart(merged_df[['review_score', 'sales']])
 
 # Add labels and title
 st.xlabel('Rating Produk')
