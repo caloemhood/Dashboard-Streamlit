@@ -14,20 +14,20 @@ st.set_page_config(
 selected = st.sidebar.radio('Select Option', ['Analisis Tren Penjualan', 'Pengaruh Rating Produk dan Penjualan'])
 # Menampilkan konten sesuai pilihan di sidebar
 if selected == 'Analisis Tren Penjualan':
+    # Add title and labels
+    st.title('Tren Penjualan Keseluruhan dari Waktu ke Waktu')
   # Analisis Tren Penjualan Waktu ke Waktu
     merged_df['order_purchase_timestamp'] = pd.to_datetime(merged_df['order_purchase_timestamp'])
 # Calculate monthly sales
     monthly_sales = merged_df.groupby(pd.to_datetime(merged_df['order_purchase_timestamp']).dt.to_period('M')).size()
-
 # Plot monthly sales using Streamlit
     st.line_chart(monthly_sales)
 
-# Add title and labels
-    st.title('Tren Penjualan Keseluruhan dari Waktu ke Waktu')
-
+elif selected == 'Rekomendasi Seller Trusted':
+    # Add labels and title
+    st.title('Hubungan antara Rating Produk dan Jumlah Penjualan')
 
 # Create scatter plot using Streamlit
-st.scatter_chart(merged_df[['review_score', 'sales']])
+    st.scatter_chart(merged_df[['review_score', 'sales']])
 
-# Add labels and title
-st.title('Hubungan antara Rating Produk dan Jumlah Penjualan')
+
