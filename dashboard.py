@@ -23,7 +23,7 @@ if selected == 'Analisis Tren Penjualan':
 # Plot monthly sales using Streamlit
     st.line_chart(monthly_sales)
 
-elif selected == 'Rekomendasi Seller Trusted':
+elif selected == 'Pengaruh Rating Produk dan Penjualan':
     # Add labels and title
     st.title('Hubungan antara Rating Produk dan Jumlah Penjualan')
 
