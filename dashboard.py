@@ -17,7 +17,7 @@ if selected == 'Analisis Tren Penjualan':
   # Analisis Tren Penjualan Waktu ke Waktu
     merged_df['order_purchase_timestamp'] = pd.to_datetime(merged_df['order_purchase_timestamp'])
 # Calculate monthly sales
-    monthly_sales = merged_df.groupby(merged_df['order_purchase_timestamp']).dt.to_period('M').size()
+    monthly_sales = merged_df.groupby(pd.to_datetime(merged_df['order_purchase_timestamp']).dt.to_period('M')).size()
 
 # Plot monthly sales using Streamlit
     st.line_chart(monthly_sales)
@@ -26,3 +26,11 @@ if selected == 'Analisis Tren Penjualan':
     st.title('Tren Penjualan Keseluruhan dari Waktu ke Waktu')
     st.xlabel('Tanggal')
     st.ylabel('Total Penjualan')
+
+# Create scatter plot using Streamlit
+st.scatter_chart(product_sales_rating[['review_score', 'sales']])
+
+# Add labels and title
+st.xlabel('Rating Produk')
+st.ylabel('Jumlah Penjualan')
+st.title('Hubungan antara Rating Produk dan Jumlah Penjualan')
