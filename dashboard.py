@@ -16,12 +16,12 @@ selected = st.sidebar.radio('Select Option', ['Analisis Tren Penjualan', 'Pengar
 if selected == 'Analisis Tren Penjualan':
   # Analisis Tren Penjualan Waktu ke Waktu
 # Calculate monthly sales
-monthly_sales = merged_df.groupby('order_purchase_timestamp').dt.to_period('M').size()
+    monthly_sales = merged_df.groupby('order_purchase_timestamp').dt.to_period('M').size()
 
 # Plot monthly sales using Streamlit
-st.line_chart(monthly_sales)
+    st.line_chart(monthly_sales)
 
 # Add title and labels
-st.title('Tren Penjualan Keseluruhan dari Waktu ke Waktu')
-st.xlabel('Tanggal')
-st.ylabel('Total Penjualan')
+    st.title('Tren Penjualan Keseluruhan dari Waktu ke Waktu')
+    st.xlabel('Tanggal')
+    st.ylabel('Total Penjualan')
